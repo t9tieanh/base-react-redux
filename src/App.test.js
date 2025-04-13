@@ -3,14 +3,31 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import '@testing-library/jest-dom';
 
-test('renders greeting text', () => {
-  render(<App />);
-  const textElement = screen.getByText(/hello.*pham tien anh/i);
-  expect(textElement).toBeInTheDocument();
-});
+describe('App Component', () => {
+  test('renders greeting text "Hello I am Pham Tien Anh"', () => {
+    render(<App />);
 
-test('renders logo image', () => {
-  render(<App />);
-  const logoImg = screen.getByAltText(/logo/i);
-  expect(logoImg).toBeInTheDocument();
+    const fullGreeting = screen.getByText((content, element) =>
+      element?.textContent === 'Hello I am Pham Tien Anh'
+    );
+
+    expect(fullGreeting).toBeInTheDocument();
+  });
+
+  test('renders role text "I am a Frontend Developer"', () => {
+    render(<App />);
+
+    const roleText = screen.getByText((content, element) =>
+      element?.textContent === 'I am a Frontend Developer'
+    );
+
+    expect(roleText).toBeInTheDocument();
+  });
+
+  test('renders logo image with alt="logo"', () => {
+    render(<App />);
+
+    const logoImg = screen.getByAltText(/logo/i);
+    expect(logoImg).toBeInTheDocument();
+  });
 });

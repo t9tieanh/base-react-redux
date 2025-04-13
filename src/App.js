@@ -9,6 +9,9 @@ const App = () => {
         <p>
           Hello <code>I am</code> Pham Tien Anh
         </p>
+        <p>
+          I am a <code>Frontend Developer</code>
+        </p>
       </header>
     </div>
   );
