@@ -4,11 +4,11 @@ import App from './App';
 import '@testing-library/jest-dom';
 
 describe('App Component', () => {
-  test('renders greeting text "Hello I am Pham Tien Anh"', () => {
+  test('renders greeting text "Hello I am Pham Tien Anh - 22110282"', () => {
     render(<App />);
 
     const fullGreeting = screen.getByText((content, element) =>
-      element?.textContent === 'Hello I am Pham Tien Anh'
+      element?.textContent === 'Hello I am Pham Tien Anh - 22110282'
     );
 
     expect(fullGreeting).toBeInTheDocument();
